@@ -5,3 +5,12 @@ Content-Type: application/json
   "customerName" : "junhyung",
   "holdingAmount" : 10000
 }
+
+###
+POST http://localhost:8090/orders
+Content-Type: application/json
+
+{
+  "customerId" : "ce3543f5-14aa-4b89-b44f-a8812c26793f",
+  "totalAmount" : 2000
+}

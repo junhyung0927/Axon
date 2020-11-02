@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
@@ -21,5 +22,10 @@ public class CustomerServiceImpl implements CustomerService{
                 request.getCustomerName(),
                 request.getHoldingAmount()
         ));
+    }
+
+    @Override
+    public Optional<CustomerAggregate> findById(String customerId) {
+        return repository.findById(customerId);
     }
 }
